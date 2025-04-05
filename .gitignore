@@ -1,0 +1,28 @@
+# Scala-specific
+*.class
+*.log
+target/
+
+# SBT-specific
+.cache/
+.history/
+.lib/
+dist/*
+lib_managed/
+src_managed/
+project/boot/
+project/plugins/project/
+
+# IDE-specific (IntelliJ)
+.idea/
+*.iml
+*.iws
+*.ipr
+.idea_modules/
+
+# IDE-specific (VS Code)
+.vscode/
+
+# OS-specific
+.DS_Store
+Thumbs.db
