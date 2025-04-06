@@ -116,7 +116,6 @@ class ReportService(dbService: DatabaseService)(implicit ec: ExecutionContext) {
                  "|                RUNWAY SURFACE TYPES BY COUNTRY                    |\n" +
                  "+------------------------------------------------------------------+"
     
-    // Group countries by first letter for better organization
     val groupedByLetter = data.toSeq
       .sortBy(_._1)
       .groupBy(_._1.head)
@@ -131,7 +130,6 @@ class ReportService(dbService: DatabaseService)(implicit ec: ExecutionContext) {
         val displayName = s"$code - $name"
         val truncatedName = if (displayName.length > 25) displayName.take(22) + "..." else displayName.padTo(25, ' ')
         
-        // Format surfaces with line breaks if needed
         val formattedSurfaces = formatSurfaces(surfaces)
         s"| $truncatedName | $formattedSurfaces"
       }.mkString("\n")
@@ -147,7 +145,6 @@ class ReportService(dbService: DatabaseService)(implicit ec: ExecutionContext) {
   private def formatSurfaces(surfaces: Set[String]): String = {
     if (surfaces.isEmpty) return "No data available"
     
-    // Limit to 5 surface types per line for readability
     val maxPerLine = 5
     val chunks = surfaces.toSeq.sorted.grouped(maxPerLine).toSeq
     

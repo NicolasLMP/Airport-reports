@@ -1,9 +1,7 @@
-# Scala-specific
 *.class
 *.log
 target/
 
-# SBT-specific
 .cache/
 .history/
 .lib/
@@ -13,16 +11,20 @@ src_managed/
 project/boot/
 project/plugins/project/
 
-# IDE-specific (IntelliJ)
 .idea/
 *.iml
 *.iws
 *.ipr
 .idea_modules/
 
-# IDE-specific (VS Code)
 .vscode/
 
-# OS-specific
 .DS_Store
 Thumbs.db
+
+# Metals specific
+.metals/
+.metals/metals.mv.db
+.metals/metals.h2.db
+.metals/.reports/
+.bloop/

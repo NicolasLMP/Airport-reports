@@ -28,4 +28,3 @@ object Country {
   }
 }
 
-// Similar for Airport and Runway with their respective fields
